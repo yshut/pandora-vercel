@@ -25,7 +25,7 @@ class ChatBot:
         self.sentry = sentry
         self.login_local = login_local
         self.log_level = logging.DEBUG if debug else logging.WARN
-        self.api_prefix = getenv('CHATGPT_API_PREFIX', 'https://ai.fakeopen.com')
+        self.api_prefix = getenv('CHATGPT_API_PREFIX', '')
 
         hook_logging(level=self.log_level, format='[%(asctime)s] %(levelname)s in %(module)s: %(message)s')
         self.logger = logging.getLogger('waitress')
