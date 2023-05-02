@@ -1,12 +1,865 @@
 <!DOCTYPE html>
+<!-- saved from url=(0029)https://chat1.yshut.com/login -->
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex, nofollow" />
-    <link rel="stylesheet" href="/ulp/react-components/1.66.5/css/main.cdn.min.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        .swal-icon--error {
+            border-color: #f27474;
+            -webkit-animation: animateErrorIcon .5s;
+            animation: animateErrorIcon .5s
+        }
+
+        .swal-icon--error__x-mark {
+            position: relative;
+            display: block;
+            -webkit-animation: animateXMark .5s;
+            animation: animateXMark .5s
+        }
+
+        .swal-icon--error__line {
+            position: absolute;
+            height: 5px;
+            width: 47px;
+            background-color: #f27474;
+            display: block;
+            top: 37px;
+            border-radius: 2px
+        }
+
+        .swal-icon--error__line--left {
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            left: 17px
+        }
+
+        .swal-icon--error__line--right {
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            right: 16px
+        }
+
+        @-webkit-keyframes animateErrorIcon {
+            0% {
+                -webkit-transform: rotateX(100deg);
+                transform: rotateX(100deg);
+                opacity: 0
+            }
+
+            to {
+                -webkit-transform: rotateX(0deg);
+                transform: rotateX(0deg);
+                opacity: 1
+            }
+        }
+
+        @keyframes animateErrorIcon {
+            0% {
+                -webkit-transform: rotateX(100deg);
+                transform: rotateX(100deg);
+                opacity: 0
+            }
+
+            to {
+                -webkit-transform: rotateX(0deg);
+                transform: rotateX(0deg);
+                opacity: 1
+            }
+        }
+
+        @-webkit-keyframes animateXMark {
+            0% {
+                -webkit-transform: scale(.4);
+                transform: scale(.4);
+                margin-top: 26px;
+                opacity: 0
+            }
+
+            50% {
+                -webkit-transform: scale(.4);
+                transform: scale(.4);
+                margin-top: 26px;
+                opacity: 0
+            }
+
+            80% {
+                -webkit-transform: scale(1.15);
+                transform: scale(1.15);
+                margin-top: -6px
+            }
+
+            to {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                margin-top: 0;
+                opacity: 1
+            }
+        }
+
+        @keyframes animateXMark {
+            0% {
+                -webkit-transform: scale(.4);
+                transform: scale(.4);
+                margin-top: 26px;
+                opacity: 0
+            }
+
+            50% {
+                -webkit-transform: scale(.4);
+                transform: scale(.4);
+                margin-top: 26px;
+                opacity: 0
+            }
+
+            80% {
+                -webkit-transform: scale(1.15);
+                transform: scale(1.15);
+                margin-top: -6px
+            }
+
+            to {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                margin-top: 0;
+                opacity: 1
+            }
+        }
+
+        .swal-icon--warning {
+            border-color: #f8bb86;
+            -webkit-animation: pulseWarning .75s infinite alternate;
+            animation: pulseWarning .75s infinite alternate
+        }
+
+        .swal-icon--warning__body {
+            width: 5px;
+            height: 47px;
+            top: 10px;
+            border-radius: 2px;
+            margin-left: -2px
+        }
+
+        .swal-icon--warning__body,
+        .swal-icon--warning__dot {
+            position: absolute;
+            left: 50%;
+            background-color: #f8bb86
+        }
+
+        .swal-icon--warning__dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            margin-left: -4px;
+            bottom: -11px
+        }
+
+        @-webkit-keyframes pulseWarning {
+            0% {
+                border-color: #f8d486
+            }
+
+            to {
+                border-color: #f8bb86
+            }
+        }
+
+        @keyframes pulseWarning {
+            0% {
+                border-color: #f8d486
+            }
+
+            to {
+                border-color: #f8bb86
+            }
+        }
+
+        .swal-icon--success {
+            border-color: #a5dc86
+        }
+
+        .swal-icon--success:after,
+        .swal-icon--success:before {
+            content: "";
+            border-radius: 50%;
+            position: absolute;
+            width: 60px;
+            height: 120px;
+            background: #fff;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg)
+        }
+
+        .swal-icon--success:before {
+            border-radius: 120px 0 0 120px;
+            top: -7px;
+            left: -33px;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transform-origin: 60px 60px;
+            transform-origin: 60px 60px
+        }
+
+        .swal-icon--success:after {
+            border-radius: 0 120px 120px 0;
+            top: -11px;
+            left: 30px;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transform-origin: 0 60px;
+            transform-origin: 0 60px;
+            -webkit-animation: rotatePlaceholder 4.25s ease-in;
+            animation: rotatePlaceholder 4.25s ease-in
+        }
+
+        .swal-icon--success__ring {
+            width: 80px;
+            height: 80px;
+            border: 4px solid hsla(98, 55%, 69%, .2);
+            border-radius: 50%;
+            box-sizing: content-box;
+            position: absolute;
+            left: -4px;
+            top: -4px;
+            z-index: 2
+        }
+
+        .swal-icon--success__hide-corners {
+            width: 5px;
+            height: 90px;
+            background-color: #fff;
+            padding: 1px;
+            position: absolute;
+            left: 28px;
+            top: 8px;
+            z-index: 1;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg)
+        }
+
+        .swal-icon--success__line {
+            height: 5px;
+            background-color: #a5dc86;
+            display: block;
+            border-radius: 2px;
+            position: absolute;
+            z-index: 2
+        }
+
+        .swal-icon--success__line--tip {
+            width: 25px;
+            left: 14px;
+            top: 46px;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-animation: animateSuccessTip .75s;
+            animation: animateSuccessTip .75s
+        }
+
+        .swal-icon--success__line--long {
+            width: 47px;
+            right: 8px;
+            top: 38px;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-animation: animateSuccessLong .75s;
+            animation: animateSuccessLong .75s
+        }
+
+        @-webkit-keyframes rotatePlaceholder {
+            0% {
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg)
+            }
+
+            5% {
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg)
+            }
+
+            12% {
+                -webkit-transform: rotate(-405deg);
+                transform: rotate(-405deg)
+            }
+
+            to {
+                -webkit-transform: rotate(-405deg);
+                transform: rotate(-405deg)
+            }
+        }
+
+        @keyframes rotatePlaceholder {
+            0% {
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg)
+            }
+
+            5% {
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg)
+            }
+
+            12% {
+                -webkit-transform: rotate(-405deg);
+                transform: rotate(-405deg)
+            }
+
+            to {
+                -webkit-transform: rotate(-405deg);
+                transform: rotate(-405deg)
+            }
+        }
+
+        @-webkit-keyframes animateSuccessTip {
+            0% {
+                width: 0;
+                left: 1px;
+                top: 19px
+            }
+
+            54% {
+                width: 0;
+                left: 1px;
+                top: 19px
+            }
+
+            70% {
+                width: 50px;
+                left: -8px;
+                top: 37px
+            }
+
+            84% {
+                width: 17px;
+                left: 21px;
+                top: 48px
+            }
+
+            to {
+                width: 25px;
+                left: 14px;
+                top: 45px
+            }
+        }
+
+        @keyframes animateSuccessTip {
+            0% {
+                width: 0;
+                left: 1px;
+                top: 19px
+            }
+
+            54% {
+                width: 0;
+                left: 1px;
+                top: 19px
+            }
+
+            70% {
+                width: 50px;
+                left: -8px;
+                top: 37px
+            }
+
+            84% {
+                width: 17px;
+                left: 21px;
+                top: 48px
+            }
+
+            to {
+                width: 25px;
+                left: 14px;
+                top: 45px
+            }
+        }
+
+        @-webkit-keyframes animateSuccessLong {
+            0% {
+                width: 0;
+                right: 46px;
+                top: 54px
+            }
+
+            65% {
+                width: 0;
+                right: 46px;
+                top: 54px
+            }
+
+            84% {
+                width: 55px;
+                right: 0;
+                top: 35px
+            }
+
+            to {
+                width: 47px;
+                right: 8px;
+                top: 38px
+            }
+        }
+
+        @keyframes animateSuccessLong {
+            0% {
+                width: 0;
+                right: 46px;
+                top: 54px
+            }
+
+            65% {
+                width: 0;
+                right: 46px;
+                top: 54px
+            }
+
+            84% {
+                width: 55px;
+                right: 0;
+                top: 35px
+            }
+
+            to {
+                width: 47px;
+                right: 8px;
+                top: 38px
+            }
+        }
+
+        .swal-icon--info {
+            border-color: #c9dae1
+        }
+
+        .swal-icon--info:before {
+            width: 5px;
+            height: 29px;
+            bottom: 17px;
+            border-radius: 2px;
+            margin-left: -2px
+        }
+
+        .swal-icon--info:after,
+        .swal-icon--info:before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            background-color: #c9dae1
+        }
+
+        .swal-icon--info:after {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            margin-left: -3px;
+            top: 19px
+        }
+
+        .swal-icon {
+            width: 80px;
+            height: 80px;
+            border-width: 4px;
+            border-style: solid;
+            border-radius: 50%;
+            padding: 0;
+            position: relative;
+            box-sizing: content-box;
+            margin: 20px auto
+        }
+
+        .swal-icon:first-child {
+            margin-top: 32px
+        }
+
+        .swal-icon--custom {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            border: none;
+            border-radius: 0
+        }
+
+        .swal-icon img {
+            max-width: 100%;
+            max-height: 100%
+        }
+
+        .swal-title {
+            color: rgba(0, 0, 0, .65);
+            font-weight: 600;
+            text-transform: none;
+            position: relative;
+            display: block;
+            padding: 13px 16px;
+            font-size: 27px;
+            line-height: normal;
+            text-align: center;
+            margin-bottom: 0
+        }
+
+        .swal-title:first-child {
+            margin-top: 26px
+        }
+
+        .swal-title:not(:first-child) {
+            padding-bottom: 0
+        }
+
+        .swal-title:not(:last-child) {
+            margin-bottom: 13px
+        }
+
+        .swal-text {
+            font-size: 16px;
+            position: relative;
+            float: none;
+            line-height: normal;
+            vertical-align: top;
+            text-align: left;
+            display: inline-block;
+            margin: 0;
+            padding: 0 10px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, .64);
+            max-width: calc(100% - 20px);
+            overflow-wrap: break-word;
+            box-sizing: border-box
+        }
+
+        .swal-text:first-child {
+            margin-top: 45px
+        }
+
+        .swal-text:last-child {
+            margin-bottom: 45px
+        }
+
+        .swal-footer {
+            text-align: right;
+            padding-top: 13px;
+            margin-top: 13px;
+            padding: 13px 16px;
+            border-radius: inherit;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0
+        }
+
+        .swal-button-container {
+            margin: 5px;
+            display: inline-block;
+            position: relative
+        }
+
+        .swal-button {
+            background-color: #7cd1f9;
+            color: #fff;
+            border: none;
+            box-shadow: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 10px 24px;
+            margin: 0;
+            cursor: pointer
+        }
+
+        .swal-button:not([disabled]):hover {
+            background-color: #78cbf2
+        }
+
+        .swal-button:active {
+            background-color: #70bce0
+        }
+
+        .swal-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(43, 114, 165, .29)
+        }
+
+        .swal-button[disabled] {
+            opacity: .5;
+            cursor: default
+        }
+
+        .swal-button::-moz-focus-inner {
+            border: 0
+        }
+
+        .swal-button--cancel {
+            color: #555;
+            background-color: #efefef
+        }
+
+        .swal-button--cancel:not([disabled]):hover {
+            background-color: #e8e8e8
+        }
+
+        .swal-button--cancel:active {
+            background-color: #d7d7d7
+        }
+
+        .swal-button--cancel:focus {
+            box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(116, 136, 150, .29)
+        }
+
+        .swal-button--danger {
+            background-color: #e64942
+        }
+
+        .swal-button--danger:not([disabled]):hover {
+            background-color: #df4740
+        }
+
+        .swal-button--danger:active {
+            background-color: #cf423b
+        }
+
+        .swal-button--danger:focus {
+            box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(165, 43, 43, .29)
+        }
+
+        .swal-content {
+            padding: 0 20px;
+            margin-top: 20px;
+            font-size: medium
+        }
+
+        .swal-content:last-child {
+            margin-bottom: 20px
+        }
+
+        .swal-content__input,
+        .swal-content__textarea {
+            -webkit-appearance: none;
+            background-color: #fff;
+            border: none;
+            font-size: 14px;
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            border: 1px solid rgba(0, 0, 0, .14);
+            padding: 10px 13px;
+            border-radius: 2px;
+            transition: border-color .2s
+        }
+
+        .swal-content__input:focus,
+        .swal-content__textarea:focus {
+            outline: none;
+            border-color: #6db8ff
+        }
+
+        .swal-content__textarea {
+            resize: vertical
+        }
+
+        .swal-button--loading {
+            color: transparent
+        }
+
+        .swal-button--loading~.swal-button__loader {
+            opacity: 1
+        }
+
+        .swal-button__loader {
+            position: absolute;
+            height: auto;
+            width: 43px;
+            z-index: 2;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+            text-align: center;
+            pointer-events: none;
+            opacity: 0
+        }
+
+        .swal-button__loader div {
+            display: inline-block;
+            float: none;
+            vertical-align: baseline;
+            width: 9px;
+            height: 9px;
+            padding: 0;
+            border: none;
+            margin: 2px;
+            opacity: .4;
+            border-radius: 7px;
+            background-color: hsla(0, 0%, 100%, .9);
+            transition: background .2s;
+            -webkit-animation: swal-loading-anim 1s infinite;
+            animation: swal-loading-anim 1s infinite
+        }
+
+        .swal-button__loader div:nth-child(3n+2) {
+            -webkit-animation-delay: .15s;
+            animation-delay: .15s
+        }
+
+        .swal-button__loader div:nth-child(3n+3) {
+            -webkit-animation-delay: .3s;
+            animation-delay: .3s
+        }
+
+        @-webkit-keyframes swal-loading-anim {
+            0% {
+                opacity: .4
+            }
+
+            20% {
+                opacity: .4
+            }
+
+            50% {
+                opacity: 1
+            }
+
+            to {
+                opacity: .4
+            }
+        }
+
+        @keyframes swal-loading-anim {
+            0% {
+                opacity: .4
+            }
+
+            20% {
+                opacity: .4
+            }
+
+            50% {
+                opacity: 1
+            }
+
+            to {
+                opacity: .4
+            }
+        }
+
+        .swal-overlay {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0;
+            overflow-y: auto;
+            background-color: rgba(0, 0, 0, .4);
+            z-index: 10000;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity .3s
+        }
+
+        .swal-overlay:before {
+            content: " ";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%
+        }
+
+        .swal-overlay--show-modal {
+            opacity: 1;
+            pointer-events: auto
+        }
+
+        .swal-overlay--show-modal .swal-modal {
+            opacity: 1;
+            pointer-events: auto;
+            box-sizing: border-box;
+            -webkit-animation: showSweetAlert .3s;
+            animation: showSweetAlert .3s;
+            will-change: transform
+        }
+
+        .swal-modal {
+            width: 478px;
+            opacity: 0;
+            pointer-events: none;
+            background-color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            position: static;
+            margin: 20px auto;
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            z-index: 10001;
+            transition: opacity .2s, -webkit-transform .3s;
+            transition: transform .3s, opacity .2s;
+            transition: transform .3s, opacity .2s, -webkit-transform .3s
+        }
+
+        @media (max-width:500px) {
+            .swal-modal {
+                width: calc(100% - 20px)
+            }
+        }
+
+        @-webkit-keyframes showSweetAlert {
+            0% {
+                -webkit-transform: scale(1);
+                transform: scale(1)
+            }
+
+            1% {
+                -webkit-transform: scale(.5);
+                transform: scale(.5)
+            }
+
+            45% {
+                -webkit-transform: scale(1.05);
+                transform: scale(1.05)
+            }
+
+            80% {
+                -webkit-transform: scale(.95);
+                transform: scale(.95)
+            }
+
+            to {
+                -webkit-transform: scale(1);
+                transform: scale(1)
+            }
+        }
+
+        @keyframes showSweetAlert {
+            0% {
+                -webkit-transform: scale(1);
+                transform: scale(1)
+            }
+
+            1% {
+                -webkit-transform: scale(.5);
+                transform: scale(.5)
+            }
+
+            45% {
+                -webkit-transform: scale(1.05);
+                transform: scale(1.05)
+            }
+
+            80% {
+                -webkit-transform: scale(.95);
+                transform: scale(.95)
+            }
+
+            to {
+                -webkit-transform: scale(1);
+                transform: scale(1)
+            }
+        }
+    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="./login_files/main.cdn.min.css">
     <style id="custom-styles-container">
         body {
             background: #ffffff;
@@ -214,7 +1067,8 @@
     <div class="oai-wrapper">
         <header class="oai-header"><svg viewBox="140 140 520 520" xmlns="http://www.w3.org/2000/svg">
                 <path
-                    d="m617.24 354a126.36 126.36 0 0 0 -10.86-103.79 127.8 127.8 0 0 0 -137.65-61.32 126.36 126.36 0 0 0 -95.31-42.49 127.81 127.81 0 0 0 -121.92 88.49 126.4 126.4 0 0 0 -84.5 61.3 127.82 127.82 0 0 0 15.72 149.86 126.36 126.36 0 0 0 10.86 103.79 127.81 127.81 0 0 0 137.65 61.32 126.36 126.36 0 0 0 95.31 42.49 127.81 127.81 0 0 0 121.96-88.54 126.4 126.4 0 0 0 84.5-61.3 127.82 127.82 0 0 0 -15.76-149.81zm-190.66 266.49a94.79 94.79 0 0 1 -60.85-22c.77-.42 2.12-1.16 3-1.7l101-58.34a16.42 16.42 0 0 0 8.3-14.37v-142.39l42.69 24.65a1.52 1.52 0 0 1 .83 1.17v117.92a95.18 95.18 0 0 1 -94.97 95.06zm-204.24-87.23a94.74 94.74 0 0 1 -11.34-63.7c.75.45 2.06 1.25 3 1.79l101 58.34a16.44 16.44 0 0 0 16.59 0l123.31-71.2v49.3a1.53 1.53 0 0 1 -.61 1.31l-102.1 58.95a95.16 95.16 0 0 1 -129.85-34.79zm-26.57-220.49a94.71 94.71 0 0 1 49.48-41.68c0 .87-.05 2.41-.05 3.48v116.68a16.41 16.41 0 0 0 8.29 14.36l123.31 71.19-42.69 24.65a1.53 1.53 0 0 1 -1.44.13l-102.11-59a95.16 95.16 0 0 1 -34.79-129.81zm350.74 81.62-123.31-71.2 42.69-24.64a1.53 1.53 0 0 1 1.44-.13l102.11 58.95a95.08 95.08 0 0 1 -14.69 171.55c0-.88 0-2.42 0-3.49v-116.68a16.4 16.4 0 0 0 -8.24-14.36zm42.49-63.95c-.75-.46-2.06-1.25-3-1.79l-101-58.34a16.46 16.46 0 0 0 -16.59 0l-123.31 71.2v-49.3a1.53 1.53 0 0 1 .61-1.31l102.1-58.9a95.07 95.07 0 0 1 141.19 98.44zm-267.11 87.87-42.7-24.65a1.52 1.52 0 0 1 -.83-1.17v-117.92a95.07 95.07 0 0 1 155.9-73c-.77.42-2.11 1.16-3 1.7l-101 58.34a16.41 16.41 0 0 0 -8.3 14.36zm23.19-50 54.92-31.72 54.92 31.7v63.42l-54.92 31.7-54.92-31.7z" />
+                    d="m617.24 354a126.36 126.36 0 0 0 -10.86-103.79 127.8 127.8 0 0 0 -137.65-61.32 126.36 126.36 0 0 0 -95.31-42.49 127.81 127.81 0 0 0 -121.92 88.49 126.4 126.4 0 0 0 -84.5 61.3 127.82 127.82 0 0 0 15.72 149.86 126.36 126.36 0 0 0 10.86 103.79 127.81 127.81 0 0 0 137.65 61.32 126.36 126.36 0 0 0 95.31 42.49 127.81 127.81 0 0 0 121.96-88.54 126.4 126.4 0 0 0 84.5-61.3 127.82 127.82 0 0 0 -15.76-149.81zm-190.66 266.49a94.79 94.79 0 0 1 -60.85-22c.77-.42 2.12-1.16 3-1.7l101-58.34a16.42 16.42 0 0 0 8.3-14.37v-142.39l42.69 24.65a1.52 1.52 0 0 1 .83 1.17v117.92a95.18 95.18 0 0 1 -94.97 95.06zm-204.24-87.23a94.74 94.74 0 0 1 -11.34-63.7c.75.45 2.06 1.25 3 1.79l101 58.34a16.44 16.44 0 0 0 16.59 0l123.31-71.2v49.3a1.53 1.53 0 0 1 -.61 1.31l-102.1 58.95a95.16 95.16 0 0 1 -129.85-34.79zm-26.57-220.49a94.71 94.71 0 0 1 49.48-41.68c0 .87-.05 2.41-.05 3.48v116.68a16.41 16.41 0 0 0 8.29 14.36l123.31 71.19-42.69 24.65a1.53 1.53 0 0 1 -1.44.13l-102.11-59a95.16 95.16 0 0 1 -34.79-129.81zm350.74 81.62-123.31-71.2 42.69-24.64a1.53 1.53 0 0 1 1.44-.13l102.11 58.95a95.08 95.08 0 0 1 -14.69 171.55c0-.88 0-2.42 0-3.49v-116.68a16.4 16.4 0 0 0 -8.24-14.36zm42.49-63.95c-.75-.46-2.06-1.25-3-1.79l-101-58.34a16.46 16.46 0 0 0 -16.59 0l-123.31 71.2v-49.3a1.53 1.53 0 0 1 .61-1.31l102.1-58.9a95.07 95.07 0 0 1 141.19 98.44zm-267.11 87.87-42.7-24.65a1.52 1.52 0 0 1 -.83-1.17v-117.92a95.07 95.07 0 0 1 155.9-73c-.77.42-2.11 1.16-3 1.7l-101 58.34a16.41 16.41 0 0 0 -8.3 14.36zm23.19-50 54.92-31.72 54.92 31.7v63.42l-54.92 31.7-54.92-31.7z">
+                </path>
             </svg></header>
         <main class="_widget login">
             <section class="c44996798 _prompt-box-outer c90f12a70">
@@ -224,27 +1078,463 @@
                             <div title="OpenAI" id="custom-prompt-logo"
                                 style="width: auto !important; height: 60px !important; position: static !important; margin: auto !important; padding: 0 !important; background-color: transparent !important; background-position: center !important; background-size: contain !important; background-repeat: no-repeat !important">
                             </div>
-                            <h1 class="ca61186d8 cb87ac8dc">Welcome Back</h1>
+                            <h1 class="ca61186d8 cb87ac8dc">ChatGPT Vercel</h1>
                             <div class="cc6691322 ccd3868ad"></div>
                         </header>
                         <div class="cd073cc55 c3057e255">
+                            <form method="POST" class="c15ce5740 _form-login-password" data-form-primary="true">
+                                <div class="ce7821f58 c9ee3d098">
+                                    <div class="c83779892">
+                                        <div class="input-wrapper _input-wrapper">
+                                            <div class="c51fadc8b c7cc0d651 text c183d9a0a c85b18936"
+                                                data-action-text="" data-alternate-action-text=""><label
+                                                    class="c41b9071b no-js c6e062879 cd80352de" for="username">管理员账号</label><input class="input cdb43277e c07239cfd"
+                                                    inputmode="email" name="username" id="username" type="text" value=""
+                                                    required="" autocomplete="username" autocapitalize="none"
+                                                    spellcheck="false" autofocus="">
+                                                <div class="c41b9071b js-required c6e062879 cd80352de"
+                                                    data-dynamic-label-for="username" aria-hidden="true">管理员账号
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-wrapper _input-wrapper">
+                                            <div class="c51fadc8b c7cc0d651 password c9378f091 c85b18936 c819d1bdd show"
+                                                data-action-text="" data-alternate-action-text=""><label
+                                                    class="c41b9071b no-js c6e062879 c3c2bcd98"
+                                                    for="password">Password</label><input
+                                                    class="input cdb43277e c94bb61d1 " name="password" id="password"
+                                                    type="text" required="" autocomplete="current-password"
+                                                    autocapitalize="none" spellcheck="false" autofocus="">
+                                                <div class="c41b9071b js-required c6e062879 c3c2bcd98"
+                                                    data-dynamic-label-for="password" aria-hidden="true">管理员密码</div>
+                                                <button type="button"
+                                                    class="c994ae14c ulp-button-icon ca2dc35c7 _button-icon"
+                                                    data-action="toggle"><span aria-hidden="true"
+                                                        class="password-icon-tooltip show-password-tooltip hide">显示密码</span><span aria-hidden="true"
+                                                        class="password-icon-tooltip hide-password-tooltip">隐藏密码</span><span
+                                                        class="screen-reader-only password-toggle-label"
+                                                        data-label="show-password">显示密码</span><span
+                                                        class="screen-reader-only password-toggle-label hide"
+                                                        data-label="hide-password">隐藏密码</span><span
+                                                        class="c9e3d0156 password js-required"
+                                                        aria-hidden="true"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cc336b8c1"><button type="submit" name="action" value="default"
+                                        class="c994ae14c c2fd8f218 ca2dc35c7 c0c7f649b _button-login-password"
+                                        data-action-button-primary="true">登录</button></div>
+                            </form>
+                            <div class="ulp-alternate-action  _alternate-action __s16nu9">
+                                <p class="cb21c50a9 cba0941cc cf12e064e">购买密钥？<a
+                                        class="c34934055 c2dd6083e" href="https://hao.yshut.com/"
+                                        target="_blank">点这里</a></p>
+                            </div>
+                            <div class="c11767592 c16884ee3"><span>用户登录</span></div>
                             <div class="c497a10c6 c87650a4b">
                                 <form method="post" data-provider="windowslive" class="cada38124 c856cfac0 c45d84291"
                                     data-form-secondary="true"><button type="button" id="submit-token"
                                         class="cb920eae9 c4a315d94 c5c10a20c" data-action-button-secondary="true"><input
-                                            type="hidden" name="action" value="token"><span
-                                            class="c47d81fe7">点此输入用户密钥</span></button></form>
+                                            type="hidden" name="action" value="token"><span class="c47d81fe7">点此输入用户密钥</span></button></form>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
-        <script id="client-scripts"
-            type="text/javascript">!function () { var t, e, v, h, r, n = { exports: function (r, a) { var n = {}; function i(t, e, r, n) { return t.addEventListener(e, r, n) } function o(t) { return "string" == typeof t } function c(t, e) { return t.getAttribute(e) } function s(t, e, r) { return t.setAttribute(e, r) } return { addClass: function (t, e) { if (t.classList) return t.classList.add(e); var r = t.className.split(" "); -1 === r.indexOf(e) && (r.push(e), t.className = r.join(" ")) }, toggleClass: function (t, e) { if (t.classList) return t.classList.toggle(e); var r = t.className.split(" "), n = r.indexOf(e); -1 !== n ? r.splice(n, 1) : r.push(e), t.className = r.join(" ") }, addClickListener: function (t, e) { return i(t, "click", e) }, addEventListener: i, getAttribute: c, getElementById: function (t) { return a.getElementById(t) }, getParent: function (t) { return t.parentNode }, isString: o, loadScript: function (t) { var e = a.createElement("script"); e.src = t, e.async = !0, a.body.appendChild(e) }, poll: function (t) { var i = t.interval || 2e3, e = t.url || r.location.href, o = t.condition || function () { return !0 }, c = t.onSuccess || function () { }, s = t.onError || function () { }; return setTimeout(function n() { var a = new XMLHttpRequest; return a.open("GET", e), a.setRequestHeader("Accept", "application/json"), a.onload = function () { if (200 === a.status) { var t = "application/json" === a.getResponseHeader("Content-Type").split(";")[0] ? JSON.parse(a.responseText) : a.responseText; return o(t) ? c() : setTimeout(n, i) } if (429 !== a.status) return s({ status: a.status, responseText: a.responseText }); var e = 1e3 * Number.parseInt(a.getResponseHeader("X-RateLimit-Reset")), r = e - (new Date).getTime(); return setTimeout(n, i < r ? r : i) }, a.send() }, i) }, querySelector: function (t, e) { return o(t) ? a.querySelector(t) : t.querySelector(e) }, querySelectorAll: function (t, e) { var r = o(t) ? a.querySelectorAll(t) : t.querySelectorAll(e); return Array.prototype.slice.call(r) }, removeClass: function (t, e) { if (t.classList) return t.classList.remove(e); var r = t.className.split(" "), n = r.indexOf(e); -1 !== n && (r.splice(n, 1), t.className = r.join(" ")) }, setAttribute: s, removeAttribute: function (t, e) { return t.removeAttribute(e) }, swapAttributes: function (t, e, r) { var n = c(t, e), a = c(t, r); s(t, r, n), s(t, e, a) }, setGlobalFlag: function (t, e) { n[t] = !!e }, getGlobalFlag: function (t) { return !!n[t] }, preventFormSubmit: function (t) { t.stopPropagation(), t.preventDefault() }, matchMedia: function (t) { return "function" != typeof r.matchMedia && r.matchMedia(t).matches }, dispatchEvent: function (t, e, r) { var n; "function" != typeof Event ? (n = a.createEvent("Event")).initCustomEvent(e, r, !1) : n = new Event(e, { bubbles: r }), t.dispatchEvent(n) }, setTimeout: setTimeout, timeoutPromise: function (t, a) { return new Promise(function (e, r) { var n = setTimeout(function () { r(new Error("timeoutPromise: promise timed out")) }, t); a.then(function (t) { clearTimeout(n), e(t) }, function (t) { clearTimeout(n), r(t) }) }) } } } }.exports(window, document), a = { exports: function (t, e) { for (var i = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_", l = new Uint8Array(256), o = 0; o < i.length; o++)l[i.charCodeAt(o)] = o; function c(t) { var e, r = new Uint8Array(t), n = r.length, a = ""; for (e = 0; e < n; e += 3)a += i[r[e] >> 2], a += i[(3 & r[e]) << 4 | r[e + 1] >> 4], a += i[(15 & r[e + 1]) << 2 | r[e + 2] >> 6], a += i[63 & r[e + 2]]; return n % 3 == 2 ? a = a.substring(0, a.length - 1) : n % 3 == 1 && (a = a.substring(0, a.length - 2)), a } function r() { return navigator && navigator.credentials && "undefined" != typeof PublicKeyCredential } return { base64URLEncode: c, base64URLDecode: function (t) { var e, r, n, a, i, o = .75 * t.length, c = t.length, s = 0, u = new Uint8Array(o); for (e = 0; e < c; e += 4)r = l[t.charCodeAt(e)], n = l[t.charCodeAt(e + 1)], a = l[t.charCodeAt(e + 2)], i = l[t.charCodeAt(e + 3)], u[s++] = r << 2 | n >> 4, u[s++] = (15 & n) << 4 | a >> 2, u[s++] = (3 & a) << 6 | 63 & i; return u.buffer }, publicKeyCredentialToJSON: function t(e) { if (e instanceof Array) { var r = []; for (o = 0; o < e.length; o += 1)r.push(t(e[o])); return r } if (e instanceof ArrayBuffer) return c(e); if (e instanceof Object) { var n = {}; for (var a in e) n[a] = t(e[a]); return n } return e }, str2ab: function (t) { for (var e = new ArrayBuffer(t.length), r = new Uint8Array(e), n = 0, a = t.length; n < a; n++)r[n] = t.charCodeAt(n); return e }, isWebAuthnAvailable: r, isWebauthnPlatformAuthenticatorAvailableAsync: function (t) { return r() ? t(1e3, PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()) : Promise.resolve(!1) } } } }.exports(window, document); ((t = {}).exports = function (n, t, o, c, s, u, l) { t("div.c51fadc8b.password").forEach(function (t) { var a, i, e = n(t, "input"), r = n(t, '[data-action="toggle"]'); o(t, (a = e, i = r, function (t) { if (t.target.classList.contains("ulp-button-icon")) { if (a.type = "password" === a.type ? "text" : "password", i) { var e = i.querySelector(".show-password-tooltip"), r = i.querySelector(".hide-password-tooltip"); e && u(e, "hide"), r && u(r, "hide") } var n = l(a); "text" === a.type ? c(n, "show") : s(n, "show") } })) }) }, t.exports)(n.querySelector, n.querySelectorAll, n.addClickListener, n.addClass, n.removeClass, n.toggleClass, n.getParent), { exports: function (t, n, a, e) { var r = t(".cfd2e2d98"), i = t("#alert-trigger"), o = t(".c5f2f0292"), c = t(".c989a3dfe"), s = !1; i && c && r && e(r, function (t) { var e = t.target === i, r = c.contains(t.target); return e && !s ? (n(o, "show"), void (s = !0)) : e && s || s && !r ? (a(o, "show"), void (s = !1)) : void 0 }) } }.exports(n.querySelector, n.addClass, n.removeClass, n.addClickListener), (v = "recaptcha_v2", h = "recaptcha_enterprise", (e = {}).exports = function (t, a, i, o, c, n) { var s, u = a("div[data-recaptcha-sitekey]"), e = a("div[data-recaptcha-sitekey] input"), l = a("#ulp-recaptcha"); function f() { return u.getAttribute("data-recaptcha-provider") } function d(t) { return e.value = t } function p(t, e) { if (t && t.getBoundingClientRect) { if (!n("(max-width: 480px)")) return l.style.transform = "", void (l.style.height = ""); (void 0 === e || isNaN(e)) && (e = 1.4); var r = 72 * e; l.style.transform = "scale(" + e + ")", l.style.height = r + "px", l.style.width = "10px", u.clientWidth + 8 < t.getBoundingClientRect().width && p(t, e - .01) } } u && (s = "recaptchaCallback_" + Math.floor(1000001 * Math.random()), window[s] = function () { var t, e, r, n; delete window[s], t = function (t) { switch (t) { case v: return window.grecaptcha; case h: return window.grecaptcha.enterprise } }(f()), e = t.render(l, { sitekey: u.getAttribute("data-recaptcha-sitekey"), "expired-callback": function () { d(""), i(u, "c3ab3f08e"), t.reset(e) }, callback: function (t) { d(t), o(u, "c3ab3f08e") } }), r = function (t) { p(t), c(window, "resize", function () { p(t) }) }, n = setInterval(function () { var t = a("#ulp-recaptcha iframe"); if (t) return clearInterval(n), r(t) }, 200) }, t(function (t, e, r) { switch (t) { case v: return "https://www.recaptcha.net/recaptcha/api.js?hl=" + e + "&onload=" + r; case h: return "https://www.recaptcha.net/recaptcha/enterprise.js?render=explicit&hl=" + e + "&onload=" + r } }(f(), u.getAttribute("data-recaptcha-lang"), s))) }, e.exports)(n.loadScript, n.querySelector, n.addClass, n.removeClass, n.addEventListener, n.matchMedia), ((r = {}).exports = function (n, t, a, i, o, c, s, u, r, l) { function f(t) { var e = t.target, r = c(e); e.value || l(e, "data-autofilled") ? i(r, "c819d1bdd") : o(r, "c819d1bdd") } function d(t) { var e = t.target; "onAutoFillStart" === t.animationName && (r(e, "data-autofilled", !0), u(t.target, "change", !0), a(e, "keyup", p, { once: !0 })) } function p(t) { var e = t.target; r(e, "data-autofilled", "") } if (n("body._simple-labels")) return t(".c41b9071b.no-js").forEach(function (t) { o(t, "no-js") }), void t(".c41b9071b.js-required").forEach(function (t) { i(t, "hide") }); t(".c51fadc8b:not(.cf8bf2cb6):not(disabled)").forEach(function (t) { i(t, "c85b18936"); var e, r = n(t, ".input"); r.value && i(t, "c819d1bdd"), a(t, "change", f), a(r, "blur", f), a(r, "animationstart", d), e = r, s(function () { e.value && u(e, "change", !0) }, 100) }) }, r.exports)(n.querySelector, n.querySelectorAll, n.addEventListener, n.addClass, n.removeClass, n.getParent, n.setTimeout, n.dispatchEvent, n.setAttribute, n.getAttribute), { exports: function (t, e, r, n, a, i) { function o(t) { var e = r("submitted"); n("submitted", !0), e ? a(t) : "apple" === i(t.target, "data-provider") && setTimeout(function () { n("submitted", !1) }, 2e3) } var c = t("form"); c && c.forEach(function (t) { e(t, "submit", o) }) } }.exports(n.querySelectorAll, n.addEventListener, n.getGlobalFlag, n.setGlobalFlag, n.preventFormSubmit, n.getAttribute), { exports: function (e, t, r) { var n = e("form._form-detect-browser-capabilities"), a = e("main.login-id"); if (n || a) { var i = t.isWebAuthnAvailable(); e("#webauthn-available").value = i ? "true" : "false", e("#js-available").value = "true", navigator.brave ? navigator.brave.isBrave().then(function (t) { e("#is-brave").value = t, o() }) : o() } function o() { i ? t.isWebauthnPlatformAuthenticatorAvailableAsync(r).then(function (t) { e("#webauthn-platform-available").value = t ? "true" : "false", n && n.submit() }).catch(function (t) { e("#webauthn-platform-available").value = "false", n && n.submit() }) : (e("#webauthn-platform-available").value = "false", n && n.submit()) } } }.exports(n.querySelector, a, n.timeoutPromise) }();</script>
+        <script id="client-scripts" type="text/javascript">
+            ! function () {
+                var t, e, v, h, r, n = {
+                        exports: function (r, a) {
+                            var n = {};
+
+                            function i(t, e, r, n) {
+                                return t.addEventListener(e, r, n)
+                            }
+
+                            function o(t) {
+                                return "string" == typeof t
+                            }
+
+                            function c(t, e) {
+                                return t.getAttribute(e)
+                            }
+
+                            function s(t, e, r) {
+                                return t.setAttribute(e, r)
+                            }
+                            return {
+                                addClass: function (t, e) {
+                                    if (t.classList) return t.classList.add(e);
+                                    var r = t.className.split(" "); - 1 === r.indexOf(e) && (r.push(e), t
+                                        .className = r.join(" "))
+                                },
+                                toggleClass: function (t, e) {
+                                    if (t.classList) return t.classList.toggle(e);
+                                    var r = t.className.split(" "),
+                                        n = r.indexOf(e); - 1 !== n ? r.splice(n, 1) : r.push(e), t.className =
+                                        r.join(" ")
+                                },
+                                addClickListener: function (t, e) {
+                                    return i(t, "click", e)
+                                },
+                                addEventListener: i,
+                                getAttribute: c,
+                                getElementById: function (t) {
+                                    return a.getElementById(t)
+                                },
+                                getParent: function (t) {
+                                    return t.parentNode
+                                },
+                                isString: o,
+                                loadScript: function (t) {
+                                    var e = a.createElement("script");
+                                    e.src = t, e.async = !0, a.body.appendChild(e)
+                                },
+                                poll: function (t) {
+                                    var i = t.interval || 2e3,
+                                        e = t.url || r.location.href,
+                                        o = t.condition || function () {
+                                            return !0
+                                        },
+                                        c = t.onSuccess || function () {},
+                                        s = t.onError || function () {};
+                                    return setTimeout(function n() {
+                                        var a = new XMLHttpRequest;
+                                        return a.open("GET", e), a.setRequestHeader("Accept",
+                                            "application/json"), a.onload = function () {
+                                            if (200 === a.status) {
+                                                var t = "application/json" === a.getResponseHeader(
+                                                    "Content-Type").split(";")[0] ? JSON.parse(a
+                                                    .responseText) : a.responseText;
+                                                return o(t) ? c() : setTimeout(n, i)
+                                            }
+                                            if (429 !== a.status) return s({
+                                                status: a.status,
+                                                responseText: a.responseText
+                                            });
+                                            var e = 1e3 * Number.parseInt(a.getResponseHeader(
+                                                    "X-RateLimit-Reset")),
+                                                r = e - (new Date).getTime();
+                                            return setTimeout(n, i < r ? r : i)
+                                        }, a.send()
+                                    }, i)
+                                },
+                                querySelector: function (t, e) {
+                                    return o(t) ? a.querySelector(t) : t.querySelector(e)
+                                },
+                                querySelectorAll: function (t, e) {
+                                    var r = o(t) ? a.querySelectorAll(t) : t.querySelectorAll(e);
+                                    return Array.prototype.slice.call(r)
+                                },
+                                removeClass: function (t, e) {
+                                    if (t.classList) return t.classList.remove(e);
+                                    var r = t.className.split(" "),
+                                        n = r.indexOf(e); - 1 !== n && (r.splice(n, 1), t.className = r.join(
+                                        " "))
+                                },
+                                setAttribute: s,
+                                removeAttribute: function (t, e) {
+                                    return t.removeAttribute(e)
+                                },
+                                swapAttributes: function (t, e, r) {
+                                    var n = c(t, e),
+                                        a = c(t, r);
+                                    s(t, r, n), s(t, e, a)
+                                },
+                                setGlobalFlag: function (t, e) {
+                                    n[t] = !!e
+                                },
+                                getGlobalFlag: function (t) {
+                                    return !!n[t]
+                                },
+                                preventFormSubmit: function (t) {
+                                    t.stopPropagation(), t.preventDefault()
+                                },
+                                matchMedia: function (t) {
+                                    return "function" != typeof r.matchMedia && r.matchMedia(t).matches
+                                },
+                                dispatchEvent: function (t, e, r) {
+                                    var n;
+                                    "function" != typeof Event ? (n = a.createEvent("Event")).initCustomEvent(e,
+                                        r, !1) : n = new Event(e, {
+                                        bubbles: r
+                                    }), t.dispatchEvent(n)
+                                },
+                                setTimeout: setTimeout,
+                                timeoutPromise: function (t, a) {
+                                    return new Promise(function (e, r) {
+                                        var n = setTimeout(function () {
+                                            r(new Error("timeoutPromise: promise timed out"))
+                                        }, t);
+                                        a.then(function (t) {
+                                            clearTimeout(n), e(t)
+                                        }, function (t) {
+                                            clearTimeout(n), r(t)
+                                        })
+                                    })
+                                }
+                            }
+                        }
+                    }.exports(window, document),
+                    a = {
+                        exports: function (t, e) {
+                            for (var i = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_", l =
+                                    new Uint8Array(256), o = 0; o < i.length; o++) l[i.charCodeAt(o)] = o;
+
+                            function c(t) {
+                                var e, r = new Uint8Array(t),
+                                    n = r.length,
+                                    a = "";
+                                for (e = 0; e < n; e += 3) a += i[r[e] >> 2], a += i[(3 & r[e]) << 4 | r[e + 1] >>
+                                    4], a += i[(15 & r[e + 1]) << 2 | r[e + 2] >> 6], a += i[63 & r[e + 2]];
+                                return n % 3 == 2 ? a = a.substring(0, a.length - 1) : n % 3 == 1 && (a = a
+                                    .substring(0, a.length - 2)), a
+                            }
+
+                            function r() {
+                                return navigator && navigator.credentials && "undefined" !=
+                                    typeof PublicKeyCredential
+                            }
+                            return {
+                                base64URLEncode: c,
+                                base64URLDecode: function (t) {
+                                    var e, r, n, a, i, o = .75 * t.length,
+                                        c = t.length,
+                                        s = 0,
+                                        u = new Uint8Array(o);
+                                    for (e = 0; e < c; e += 4) r = l[t.charCodeAt(e)], n = l[t.charCodeAt(e +
+                                            1)], a = l[t.charCodeAt(e + 2)], i = l[t.charCodeAt(e + 3)], u[
+                                        s++] = r << 2 | n >> 4, u[s++] = (15 & n) << 4 | a >> 2, u[s++] = (3 &
+                                            a) << 6 | 63 & i;
+                                    return u.buffer
+                                },
+                                publicKeyCredentialToJSON: function t(e) {
+                                    if (e instanceof Array) {
+                                        var r = [];
+                                        for (o = 0; o < e.length; o += 1) r.push(t(e[o]));
+                                        return r
+                                    }
+                                    if (e instanceof ArrayBuffer) return c(e);
+                                    if (e instanceof Object) {
+                                        var n = {};
+                                        for (var a in e) n[a] = t(e[a]);
+                                        return n
+                                    }
+                                    return e
+                                },
+                                str2ab: function (t) {
+                                    for (var e = new ArrayBuffer(t.length), r = new Uint8Array(e), n = 0, a = t
+                                            .length; n < a; n++) r[n] = t.charCodeAt(n);
+                                    return e
+                                },
+                                isWebAuthnAvailable: r,
+                                isWebauthnPlatformAuthenticatorAvailableAsync: function (t) {
+                                    return r() ? t(1e3, PublicKeyCredential
+                                        .isUserVerifyingPlatformAuthenticatorAvailable()) : Promise.resolve(
+                                        !1)
+                                }
+                            }
+                        }
+                    }.exports(window, document);
+                ((t = {}).exports = function (n, t, o, c, s, u, l) {
+                    t("div.c51fadc8b.password").forEach(function (t) {
+                        var a, i, e = n(t, "input"),
+                            r = n(t, '[data-action="toggle"]');
+                        o(t, (a = e, i = r, function (t) {
+                            if (t.target.classList.contains("ulp-button-icon")) {
+                                if (a.type = "password" === a.type ? "text" : "password", i) {
+                                    var e = i.querySelector(".show-password-tooltip"),
+                                        r = i.querySelector(".hide-password-tooltip");
+                                    e && u(e, "hide"), r && u(r, "hide")
+                                }
+                                var n = l(a);
+                                "text" === a.type ? c(n, "show") : s(n, "show")
+                            }
+                        }))
+                    })
+                }, t.exports)(n.querySelector, n.querySelectorAll, n.addClickListener, n.addClass, n.removeClass, n
+                    .toggleClass, n.getParent), {
+                    exports: function (t, n, a, e) {
+                        var r = t(".cfd2e2d98"),
+                            i = t("#alert-trigger"),
+                            o = t(".c5f2f0292"),
+                            c = t(".c989a3dfe"),
+                            s = !1;
+                        i && c && r && e(r, function (t) {
+                            var e = t.target === i,
+                                r = c.contains(t.target);
+                            return e && !s ? (n(o, "show"), void(s = !0)) : e && s || s && !r ? (a(o,
+                                "show"), void(s = !1)) : void 0
+                        })
+                    }
+                }.exports(n.querySelector, n.addClass, n.removeClass, n.addClickListener), (v = "recaptcha_v2", h =
+                    "recaptcha_enterprise", (e = {}).exports = function (t, a, i, o, c, n) {
+                        var s, u = a("div[data-recaptcha-sitekey]"),
+                            e = a("div[data-recaptcha-sitekey] input"),
+                            l = a("#ulp-recaptcha");
+
+                        function f() {
+                            return u.getAttribute("data-recaptcha-provider")
+                        }
+
+                        function d(t) {
+                            return e.value = t
+                        }
+
+                        function p(t, e) {
+                            if (t && t.getBoundingClientRect) {
+                                if (!n("(max-width: 480px)")) return l.style.transform = "", void(l.style.height =
+                                    "");
+                                (void 0 === e || isNaN(e)) && (e = 1.4);
+                                var r = 72 * e;
+                                l.style.transform = "scale(" + e + ")", l.style.height = r + "px", l.style.width =
+                                    "10px", u.clientWidth + 8 < t.getBoundingClientRect().width && p(t, e - .01)
+                            }
+                        }
+                        u && (s = "recaptchaCallback_" + Math.floor(1000001 * Math.random()), window[s] =
+                        function () {
+                            var t, e, r, n;
+                            delete window[s], t = function (t) {
+                                switch (t) {
+                                    case v:
+                                        return window.grecaptcha;
+                                    case h:
+                                        return window.grecaptcha.enterprise
+                                }
+                            }(f()), e = t.render(l, {
+                                sitekey: u.getAttribute("data-recaptcha-sitekey"),
+                                "expired-callback": function () {
+                                    d(""), i(u, "c3ab3f08e"), t.reset(e)
+                                },
+                                callback: function (t) {
+                                    d(t), o(u, "c3ab3f08e")
+                                }
+                            }), r = function (t) {
+                                p(t), c(window, "resize", function () {
+                                    p(t)
+                                })
+                            }, n = setInterval(function () {
+                                var t = a("#ulp-recaptcha iframe");
+                                if (t) return clearInterval(n), r(t)
+                            }, 200)
+                        }, t(function (t, e, r) {
+                            switch (t) {
+                                case v:
+                                    return "https://www.recaptcha.net/recaptcha/api.js?hl=" + e +
+                                        "&onload=" + r;
+                                case h:
+                                    return "https://www.recaptcha.net/recaptcha/enterprise.js?render=explicit&hl=" +
+                                        e + "&onload=" + r
+                            }
+                        }(f(), u.getAttribute("data-recaptcha-lang"), s)))
+                    }, e.exports)(n.loadScript, n.querySelector, n.addClass, n.removeClass, n.addEventListener, n
+                    .matchMedia), ((r = {}).exports = function (n, t, a, i, o, c, s, u, r, l) {
+                    function f(t) {
+                        var e = t.target,
+                            r = c(e);
+                        e.value || l(e, "data-autofilled") ? i(r, "c819d1bdd") : o(r, "c819d1bdd")
+                    }
+
+                    function d(t) {
+                        var e = t.target;
+                        "onAutoFillStart" === t.animationName && (r(e, "data-autofilled", !0), u(t.target,
+                            "change", !0), a(e, "keyup", p, {
+                            once: !0
+                        }))
+                    }
+
+                    function p(t) {
+                        var e = t.target;
+                        r(e, "data-autofilled", "")
+                    }
+                    if (n("body._simple-labels")) return t(".c41b9071b.no-js").forEach(function (t) {
+                        o(t, "no-js")
+                    }), void t(".c41b9071b.js-required").forEach(function (t) {
+                        i(t, "hide")
+                    });
+                    t(".c51fadc8b:not(.cf8bf2cb6):not(disabled)").forEach(function (t) {
+                        i(t, "c85b18936");
+                        var e, r = n(t, ".input");
+                        r.value && i(t, "c819d1bdd"), a(t, "change", f), a(r, "blur", f), a(r,
+                            "animationstart", d), e = r, s(function () {
+                            e.value && u(e, "change", !0)
+                        }, 100)
+                    })
+                }, r.exports)(n.querySelector, n.querySelectorAll, n.addEventListener, n.addClass, n.removeClass, n
+                    .getParent, n.setTimeout, n.dispatchEvent, n.setAttribute, n.getAttribute), {
+                    exports: function (t, e, r, n, a, i) {
+                        function o(t) {
+                            var e = r("submitted");
+                            n("submitted", !0), e ? a(t) : "apple" === i(t.target, "data-provider") &&
+                                setTimeout(function () {
+                                    n("submitted", !1)
+                                }, 2e3)
+                        }
+                        var c = t("form");
+                        c && c.forEach(function (t) {
+                            e(t, "submit", o)
+                        })
+                    }
+                }.exports(n.querySelectorAll, n.addEventListener, n.getGlobalFlag, n.setGlobalFlag, n
+                    .preventFormSubmit, n.getAttribute), {
+                    exports: function (e, t, r) {
+                        var n = e("form._form-detect-browser-capabilities"),
+                            a = e("main.login-id");
+                        if (n || a) {
+                            var i = t.isWebAuthnAvailable();
+                            e("#webauthn-available").value = i ? "true" : "false", e("#js-available").value =
+                                "true", navigator.brave ? navigator.brave.isBrave().then(function (t) {
+                                    e("#is-brave").value = t, o()
+                                }) : o()
+                        }
+
+                        function o() {
+                            i ? t.isWebauthnPlatformAuthenticatorAvailableAsync(r).then(function (t) {
+                                e("#webauthn-platform-available").value = t ? "true" : "false", n && n
+                                    .submit()
+                            }).catch(function (t) {
+                                e("#webauthn-platform-available").value = "false", n && n.submit()
+                            }) : (e("#webauthn-platform-available").value = "false", n && n.submit())
+                        }
+                    }
+                }.exports(n.querySelector, a, n.timeoutPromise)
+            }();
+        </script>
+        <footer class="oai-footer"><a href="https://hao.yshut.com/" target="_blank">购买密钥</a>
+        </footer>
     </div>
-    <script
-        type="text/javascript">function updateHeader(text) { const $h1 = document.querySelector('main header > h1'); if ($h1) { $h1.innerText = text } } updateHeader('免翻使用ChatGPT'); window.addEventListener('load', function () { const submitBtn = document.querySelector('#submit-token'); submitBtn.addEventListener('click', function () { const accessToken = prompt('请输入用户密钥:'); if (accessToken) { fetch('login_token', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: 'action=token&access_token=' + encodeURIComponent(accessToken) }).then(response => response.json()).then(data => { if (0 === data.code) { window.location.href = data.url } else { alert(data.message) } }).catch(error => console.error(error)) } }) });</script>
+    <script type="text/javascript">
+        function updateHeader(text) {
+            const $h1 = document.querySelector('main header > h1');
+            if ($h1) {
+                $h1.innerText = text
+            }
+        }
+        updateHeader('免翻使用ChatGPT');
+        window.addEventListener('load', function () {
+            const submitBtn = document.querySelector('#submit-token');
+            submitBtn.addEventListener('click', function () {
+                const accessToken = prompt('请输入用户密钥:');
+                if (accessToken) {
+                    fetch('login_token', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: 'action=token&access_token=' + encodeURIComponent(accessToken)
+                    }).then(response => response.json()).then(data => {
+                        if (0 === data.code) {
+                            window.location.href = data.url
+                        } else {
+                            alert(data.message)
+                        }
+                    }).catch(error => console.error(error))
+                }
+            })
+        });
+    </script>
 </body>
 
 </html>
